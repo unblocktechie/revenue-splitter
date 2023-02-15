@@ -19,31 +19,31 @@ contract RevenueSplitter {
     address public immutable walletTwo;
 
     /**
-	 * @dev Fired in received() when native currency is received
-	 *
-	 * @param from An address from which money is received
-	 * @param amount An amomunt of native currency received
-	 */
+	   * @dev Fired in received() when native currency is received
+	   *
+	   * @param from An address from which money is received
+	   * @param amount An amomunt of native currency received
+	   */
     event Received(address indexed from, uint256 amount);
 
     /**
-	 * @dev Fired in splitTokens() when tokens splitted between two wallets
-	 *
-	 * @param by An address which executed the transaction
-	 * @param token An address of token which is splitted
+	 	 * @dev Fired in splitTokens() when tokens splitted between two wallets
+	   *
+	   * @param by An address which executed the transaction
+	   * @param token An address of token which is splitted
      * @param amount An amomunt of given token
-	 */
+	   */
     event Split(address indexed by, address indexed token, uint256 amount);
 
     /**
-	 * @dev Creates / deploys Revenue Splitter version 1.0
-	 *
+	   * @dev Creates / deploys Revenue Splitter version 1.0
+	   *
      * @notice Defines wallet addresses that will recieve all the money
      *         recieved/ held by the contract 
      *
-	 * @param walletOne_ An address of first wallet
+	   * @param walletOne_ An address of first wallet
      * @param walletTwo_ An address of second wallet
-	 */
+	   */
     constructor(address walletOne_, address walletTwo_) {
         require(walletOne_ != address(0), "Invalid address for first wallet");
         require(walletTwo_ != address(0), "Invalid address for second wallet");
